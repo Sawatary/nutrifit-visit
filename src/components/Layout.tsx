@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import type { LocaleCode } from '../locales'
 import { useApp, type ThemeMode } from '../context/AppContext'
@@ -14,14 +15,38 @@ function getThemeLabelKey(theme: ThemeMode): 'darkLabel' | 'systemLabel' | 'ligh
   return theme === 'dark' ? 'darkLabel' : theme === 'system' ? 'systemLabel' : 'lightLabel'
 }
 
+const NAV_LINKS = [
+  { to: '/features', key: 'features' as const },
+  { to: '/team', key: 'team' as const },
+  { to: '/pricing', key: 'pricing' as const },
+  { to: '/spravka', key: 'help' as const },
+  { to: '/faq', key: 'faq' as const },
+  { to: '/legal', key: 'legal' as const },
+] as const
+
 export function Layout() {
   const { t, theme, setTheme, locale, setLocale, langOpen, setLangOpen, langRef, currentLang, LOCALE_OPTIONS, getFlagSrc } = useApp()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const onEscape = (e: KeyboardEvent) => { if (e.key === 'Escape') setMobileMenuOpen(false) }
+    document.addEventListener('keydown', onEscape)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onEscape)
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
+  const navLabel = (key: typeof NAV_LINKS[number]['key']) =>
+    key === 'legal' ? t.footer.links.legal : t.nav[key]
 
   return (
     <div className="app">
       <header className="header">
         <div className="header-inner">
-          <Link to="/" className="logo" aria-label="NUTRIFIT">
+          <Link to="/" className="logo" aria-label="NUTRIFIT" onClick={() => setMobileMenuOpen(false)}>
             <svg className="logo-svg" viewBox="0 0 140 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.43,11.43V20H.29V0H7.43l2.86,8.57V0h7.14V20H10.29Z" transform="translate(-0.29)"></path>
               <path d="M36,0V14.29Q36,20,30.29,20H24.57q-5.71,0-5.71-5.71V0H26V14.29h2.86V0Z" transform="translate(-0.29)"></path>
@@ -34,12 +59,9 @@ export function Layout() {
             </svg>
           </Link>
           <nav className="nav">
-            <Link to="/features">{t.nav.features}</Link>
-            <Link to="/team">{t.nav.team}</Link>
-            <Link to="/pricing">{t.nav.pricing}</Link>
-            <Link to="/spravka">{t.nav.help}</Link>
-            <Link to="/faq">{t.nav.faq}</Link>
-            <Link to="/legal">{t.footer.links.legal}</Link>
+            {NAV_LINKS.map(({ to, key }) => (
+              <Link key={key} to={to}>{navLabel(key)}</Link>
+            ))}
           </nav>
           <div className="header-controls">
             <div className="lang-switch" ref={langRef}>
@@ -98,9 +120,49 @@ export function Layout() {
                 )}
               </span>
             </button>
+            <button
+              type="button"
+              className={`nav-burger ${mobileMenuOpen ? 'nav-burger--open' : ''}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
+              aria-controls="mobile-menu"
+            >
+              <span className="nav-burger__line" />
+              <span className="nav-burger__line" />
+              <span className="nav-burger__line" />
+            </button>
           </div>
         </div>
       </header>
+
+      <div
+        id="mobile-menu"
+        className={`nav-overlay ${mobileMenuOpen ? 'nav-overlay--open' : ''}`}
+        aria-hidden={!mobileMenuOpen}
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <nav className="nav-drawer" onClick={(e: { stopPropagation(): void }) => e.stopPropagation()}>
+          <button
+            type="button"
+            className="nav-drawer__close"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label={t.nav.closeMenu}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div className="nav-drawer__links">
+            {NAV_LINKS.map(({ to, key }) => (
+              <Link key={key} to={to} className="nav-drawer__link" onClick={() => setMobileMenuOpen(false)}>
+                {navLabel(key)}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      </div>
 
       <main>
         <Outlet />

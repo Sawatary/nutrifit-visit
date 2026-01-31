@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import { IMAGES } from '../images'
+
+const HERO_STRIP_LINKS = ['/legal', '/features', '/team'] as const
 
 export function Home() {
   const { t } = useApp()
@@ -23,9 +26,11 @@ export function Home() {
             </div>
           )}
         </div>
-        <div className="hero-strip">
+        <div className="hero-strip" role="list">
           {t.hero.strip.map((item: string, i: number) => (
-            <span key={i} className="hero-strip-item">{item}</span>
+            <Link key={i} to={HERO_STRIP_LINKS[i]} className="hero-strip-item">
+              {item}
+            </Link>
           ))}
         </div>
       </section>

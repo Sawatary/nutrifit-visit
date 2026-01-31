@@ -18,7 +18,7 @@ export interface TeamMember {
 }
 
 export interface Translations {
-  nav: { features: string; team: string; help: string; faq: string; pricing: string }
+  nav: { features: string; team: string; help: string; faq: string; pricing: string; openMenu: string; closeMenu: string }
   hero: {
     title: string
     desc: string
@@ -82,7 +82,7 @@ export interface Translations {
 }
 
 const ru: Translations = {
-  nav: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ', pricing: 'Тарифы' },
+  nav: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ', pricing: 'Тарифы', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню' },
   hero: {
     title: 'Здоровье, питание и цели — в одном месте',
     desc: 'NutriFit помогает вести дневник питания, следить за активностью и весом, хранить анализы и идти к целям вместе с наставниками и марафонами.',
@@ -208,7 +208,7 @@ const ru: Translations = {
 }
 
 const uk: Translations = {
-  nav: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ', pricing: 'Тарифи' },
+  nav: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ', pricing: 'Тарифи', openMenu: 'Відкрити меню', closeMenu: 'Закрити меню' },
   hero: {
     title: 'Здоров\'я, харчування та цілі — в одному місці',
     desc: 'NutriFit допомагає вести щоденник харчування, слідкувати за активністю та вагою, зберігати аналізи та йти до цілей разом з наставниками та марафонами.',
@@ -334,7 +334,7 @@ const uk: Translations = {
 }
 
 const kk: Translations = {
-  nav: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ', pricing: 'Тарифтер' },
+  nav: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ', pricing: 'Тарифтер', openMenu: 'Мәзірді ашу', closeMenu: 'Мәзірді жабу' },
   hero: {
     title: 'Денсаулық, тамақтану және мақсаттар — бір жерде',
     desc: 'NutriFit тамақтану күнделігін жүргізуге, белсенділік пен салмақты бақылауға, талдауларды сақтауға және нұсқаушылар мен марафондармен мақсатқа жетуге көмектеседі.',
@@ -460,7 +460,7 @@ const kk: Translations = {
 }
 
 const uz: Translations = {
-  nav: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ', pricing: 'Tariflar' },
+  nav: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ', pricing: 'Tariflar', openMenu: 'Menyuni ochish', closeMenu: 'Menyuni yopish' },
   hero: {
     title: 'Salomatlik, ovqatlanish va maqsadlar — bitta joyda',
     desc: 'NutriFit ovqatlanish kundaligini yuritish, faollik va vaznni kuzatish, tahlillarni saqlash va maslahatchilar va marafonlar bilan maqsadlarga erishishga yordam beradi.',
@@ -586,7 +586,7 @@ const uz: Translations = {
 }
 
 const en: Translations = {
-  nav: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ', pricing: 'Pricing' },
+  nav: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ', pricing: 'Pricing', openMenu: 'Open menu', closeMenu: 'Close menu' },
   hero: {
     title: 'Health, nutrition, and goals — in one place',
     desc: 'NutriFit helps you keep a food diary, track activity and weight, store lab results, and reach your goals with mentors and challenges.',
@@ -712,7 +712,7 @@ const en: Translations = {
 }
 
 const es: Translations = {
-  nav: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ', pricing: 'Precios' },
+  nav: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ', pricing: 'Precios', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
   hero: {
     title: 'Salud, nutrición y metas — en un solo lugar',
     desc: 'NutriFit te ayuda a llevar un diario de alimentación, seguir actividad y peso, guardar análisis e ir hacia tus metas con mentores y retos.',
