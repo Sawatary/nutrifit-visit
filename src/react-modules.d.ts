@@ -6,8 +6,8 @@ declare module 'react' {
   export function useState<T>(initial: T | (() => T)): [T, (value: T | ((prev: T) => T)) => void]
   export function useEffect(effect: () => void | (() => void), deps?: unknown[]): void
   export function useRef<T>(initialValue: T | null): { current: T | null }
-  export const StrictMode: unknown
-  export const Fragment: unknown
+  export const StrictMode: (props: { children?: ReactNode }) => JSX.Element
+  export const Fragment: (props: { children?: ReactNode }) => JSX.Element
   export type ReactNode = unknown
   export type DependencyList = readonly unknown[]
 }
