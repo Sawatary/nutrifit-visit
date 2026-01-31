@@ -56,10 +56,18 @@ export interface Translations {
   }
   footer: {
     tagline: string
-    links: { features: string; team: string; help: string; faq: string }
+    links: { features: string; team: string; help: string; faq: string; legal: string }
     copyright: string
   }
-  theme: { light: string; dark: string; lightLabel: string; darkLabel: string }
+  legal: {
+    title: string
+    desc: string
+    privacyPolicy: string
+    userAgreement: string
+    publicOffer: string
+    openDoc: string
+  }
+  theme: { light: string; dark: string; system: string; lightLabel: string; darkLabel: string; systemLabel: string; groupLabel: string }
   langSelectLabel: string
 }
 
@@ -132,10 +140,18 @@ const ru: Translations = {
   },
   footer: {
     tagline: 'Здоровье, питание и цели в одном приложении',
-    links: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ' },
+    links: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ', legal: 'Правовые документы' },
     copyright: 'Все права защищены.',
   },
-  theme: { light: 'Светлая тема', dark: 'Тёмная тема', lightLabel: 'Включить светлую тему', darkLabel: 'Включить тёмную тему' },
+  legal: {
+    title: 'Правовые документы',
+    desc: 'Основные документы сервиса NutriFit. Документы открываются на nutrifit.info.',
+    privacyPolicy: 'Политика конфиденциальности',
+    userAgreement: 'Пользовательское соглашение',
+    publicOffer: 'Публичная оферта',
+    openDoc: 'Открыть документ',
+  },
+  theme: { light: 'Светлая тема', dark: 'Тёмная тема', system: 'Как в системе', lightLabel: 'Светлая тема', darkLabel: 'Тёмная тема', systemLabel: 'Как в системе', groupLabel: 'Выбор темы' },
   langSelectLabel: 'Выбор языка',
 }
 
@@ -208,10 +224,18 @@ const uk: Translations = {
   },
   footer: {
     tagline: 'Здоров\'я, харчування та цілі в одному додатку',
-    links: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ' },
+    links: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ', legal: 'Правові документи' },
     copyright: 'Усі права захищені.',
   },
-  theme: { light: 'Світла тема', dark: 'Темна тема', lightLabel: 'Увімкнути світлу тему', darkLabel: 'Увімкнути темну тему' },
+  legal: {
+    title: 'Правові документи',
+    desc: 'Основні документи сервісу NutriFit. Документи відкриваються на nutrifit.info.',
+    privacyPolicy: 'Політика конфіденційності',
+    userAgreement: 'Користувацька угода',
+    publicOffer: 'Публічна оферта',
+    openDoc: 'Відкрити документ',
+  },
+  theme: { light: 'Світла тема', dark: 'Темна тема', system: 'Як у системі', lightLabel: 'Світла тема', darkLabel: 'Темна тема', systemLabel: 'Як у системі', groupLabel: 'Вибір теми' },
   langSelectLabel: 'Вибір мови',
 }
 
@@ -284,10 +308,18 @@ const kk: Translations = {
   },
   footer: {
     tagline: 'Денсаулық, тамақтану және мақсаттар бір қосымшада',
-    links: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ' },
+    links: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ', legal: 'Құқықтық құжаттар' },
     copyright: 'Барлық құқықтар қорғалған.',
   },
-  theme: { light: 'Жарық тақырып', dark: 'Қараңғы тақырып', lightLabel: 'Жарық тақырыпты қосу', darkLabel: 'Қараңғы тақырыпты қосу' },
+  legal: {
+    title: 'Құқықтық құжаттар',
+    desc: 'NutriFit сервисінің негізгі құжаттары. Құжаттар nutrifit.info сайтында ашылады.',
+    privacyPolicy: 'Құпиялылық саясаты',
+    userAgreement: 'Пайдаланушы келісімі',
+    publicOffer: 'Жария оферта',
+    openDoc: 'Құжатты ашу',
+  },
+  theme: { light: 'Жарық тақырып', dark: 'Қараңғы тақырып', system: 'Жүйедегідей', lightLabel: 'Жарық тақырып', darkLabel: 'Қараңғы тақырып', systemLabel: 'Жүйедегідей', groupLabel: 'Тақырыпты таңдау' },
   langSelectLabel: 'Тілді таңдау',
 }
 
@@ -360,10 +392,18 @@ const uz: Translations = {
   },
   footer: {
     tagline: "Salomatlik, ovqatlanish va maqsadlar bitta ilovada",
-    links: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ' },
+    links: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ', legal: 'Huquqiy hujjatlar' },
     copyright: "Barcha huquqlar himoyalangan.",
   },
-  theme: { light: "Yorug' mavzu", dark: "Qorong'i mavzu", lightLabel: "Yorug' mavzuni yoqish", darkLabel: "Qorong'i mavzuni yoqish" },
+  legal: {
+    title: 'Huquqiy hujjatlar',
+    desc: "NutriFit xizmatining asosiy hujjatlari. Hujjatlar nutrifit.info saytida ochiladi.",
+    privacyPolicy: "Maxfiylik siyosati",
+    userAgreement: "Foydalanuvchi shartnomasi",
+    publicOffer: "Ochiq oferta",
+    openDoc: "Hujjatni ochish",
+  },
+  theme: { light: "Yorug' mavzu", dark: "Qorong'i mavzu", system: "Tizimdagidek", lightLabel: "Yorug' mavzu", darkLabel: "Qorong'i mavzu", systemLabel: "Tizimdagidek", groupLabel: "Mavzuni tanlash" },
   langSelectLabel: "Tilni tanlash",
 }
 
@@ -436,10 +476,18 @@ const en: Translations = {
   },
   footer: {
     tagline: 'Health, nutrition, and goals in one app',
-    links: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ' },
+    links: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ', legal: 'Legal' },
     copyright: 'All rights reserved.',
   },
-  theme: { light: 'Light theme', dark: 'Dark theme', lightLabel: 'Switch to light theme', darkLabel: 'Switch to dark theme' },
+  legal: {
+    title: 'Legal documents',
+    desc: 'Key NutriFit service documents. Documents open on nutrifit.info.',
+    privacyPolicy: 'Privacy policy',
+    userAgreement: 'User agreement',
+    publicOffer: 'Public offer',
+    openDoc: 'Open document',
+  },
+  theme: { light: 'Light theme', dark: 'Dark theme', system: 'System', lightLabel: 'Light theme', darkLabel: 'Dark theme', systemLabel: 'System', groupLabel: 'Theme' },
   langSelectLabel: 'Select language',
 }
 
@@ -512,10 +560,18 @@ const es: Translations = {
   },
   footer: {
     tagline: 'Salud, nutrición y metas en una sola app',
-    links: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ' },
+    links: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ', legal: 'Documentos legales' },
     copyright: 'Todos los derechos reservados.',
   },
-  theme: { light: 'Tema claro', dark: 'Tema oscuro', lightLabel: 'Activar tema claro', darkLabel: 'Activar tema oscuro' },
+  legal: {
+    title: 'Documentos legales',
+    desc: 'Documentos principales del servicio NutriFit. Se abren en nutrifit.info.',
+    privacyPolicy: 'Política de privacidad',
+    userAgreement: 'Acuerdo de usuario',
+    publicOffer: 'Oferta pública',
+    openDoc: 'Abrir documento',
+  },
+  theme: { light: 'Tema claro', dark: 'Tema oscuro', system: 'Como en el sistema', lightLabel: 'Tema claro', darkLabel: 'Tema oscuro', systemLabel: 'Como en el sistema', groupLabel: 'Tema' },
   langSelectLabel: 'Seleccionar idioma',
 }
 

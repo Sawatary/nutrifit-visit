@@ -1,6 +1,12 @@
 /* ========== LAYOUT ========== */
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app > main {
+  flex: 1;
 }
 
 .container {
@@ -77,37 +83,41 @@
   width: 100%;
 }
 
-.theme-toggle {
+.theme-switcher__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   padding: 0;
-  font-size: 0.875rem;
   color: var(--text-secondary);
-  background: var(--surface-subtle);
-  border: 0px solid var(--border);
+  background: none;
+  border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  transition: color var(--transition);
   font-family: inherit;
 }
 
-.theme-toggle:hover {
+.theme-switcher__btn:hover {
   color: var(--accent-green);
-  background: var(--surface-hover);
-  border-color: var(--accent-green);
 }
 
-.theme-toggle:focus-visible {
+.theme-switcher__btn:focus-visible {
   outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }
 
-.theme-toggle-icon {
-  font-size: 1.2rem;
+.theme-switcher__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+}
+
+.theme-switcher__icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .header-controls {
@@ -129,11 +139,11 @@
   height: 40px;
   padding: 0;
   color: var(--text-secondary);
-  background: var(--surface-subtle);
+  background: none;
   border: 0px solid var(--border);
   border-radius: 50%;
   cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+  transition: color var(--transition);
   font-family: inherit;
 }
 
@@ -433,11 +443,8 @@
 .hero-strip {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   gap: 16px;
-  padding-top: 28px;
-  margin-top: 28px;
-  border-top: 1px solid var(--border);
 }
 
 .hero-strip-item {
@@ -520,6 +527,24 @@ section#team.section.section--alt {
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   align-items: start;
+}
+
+/* Одна колонка по центру (Справка, FAQ) */
+.section--two-cols:has(.two-cols-block--single) {
+  padding-top: 30px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.section--two-cols .two-cols-block--single {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section--two-cols .two-cols-block--single .section-title {
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -780,6 +805,203 @@ section#team.section.section--alt {
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+/* Правовые документы — карточки */
+.section--legal {
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+.legal-wrap {
+  max-width: 560px;
+}
+
+.legal-title {
+  margin-bottom: 8px;
+}
+
+.legal-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.legal-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 10px;
+}
+
+.legal-card-wrap {
+  width: 100%;
+}
+
+.legal-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.legal-card:hover {
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.legal-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  background: var(--surface-subtle);
+  color: var(--accent-green);
+  transition: background var(--transition), color var(--transition);
+}
+
+.legal-card:hover .legal-card__icon {
+  background: rgba(var(--accent-green-rgb, 76, 175, 80), 0.15);
+  color: var(--accent-green);
+}
+
+.legal-card__label {
+  flex: 1;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.legal-card__arrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.legal-card:hover .legal-card__arrow {
+  color: var(--accent-green);
+  transform: translate(2px, -2px);
+}
+
+/* Страница документа (Политика конфиденциальности и др.) */
+.doc-page {
+  padding: 32px 24px 48px;
+}
+
+.doc-page__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.doc-page__header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.doc-page__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.doc-page__updated {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.doc-page__body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.doc-page__body p {
+  margin: 0 0 14px;
+}
+
+.doc-page__body p:last-child {
+  margin-bottom: 0;
+}
+
+.doc-page__h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 28px 0 12px;
+}
+
+.doc-page__h2:first-of-type {
+  margin-top: 0;
+}
+
+.doc-page__section {
+  margin-bottom: 8px;
+}
+
+.doc-page__toc {
+  padding-left: 24px;
+  margin: 0 0 20px;
+  color: var(--text-secondary);
+}
+
+.doc-page__toc li {
+  margin-bottom: 6px;
+}
+
+.doc-page__body ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.doc-page__body ul li {
+  margin-bottom: 6px;
+}
+
+.doc-page__body a {
+  color: var(--accent-green);
+  text-decoration: none;
+}
+
+.doc-page__body a:hover {
+  text-decoration: underline;
+}
+
+.doc-page__nav-top {
+  margin-bottom: 16px;
+}
+
+.doc-page__footer {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.doc-page__back {
+  font-size: 0.95rem;
+  color: var(--accent-green);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.doc-page__back:hover {
+  color: var(--accent-green-hover, var(--accent-green));
+  text-decoration: underline;
 }
 
 .help-block {
