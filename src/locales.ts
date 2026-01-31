@@ -18,7 +18,7 @@ export interface TeamMember {
 }
 
 export interface Translations {
-  nav: { features: string; team: string; help: string; faq: string }
+  nav: { features: string; team: string; help: string; faq: string; pricing: string }
   hero: {
     title: string
     desc: string
@@ -58,6 +58,16 @@ export interface Translations {
     tagline: string
     links: { features: string; team: string; help: string; faq: string; legal: string }
     copyright: string
+    companyName: string
+    jurisdiction: string
+    email: string
+  }
+  pricing: {
+    title: string
+    subtitle: string
+    lite: { name: string; price: string; pricePeriod?: string; features: string[]; buttonText: string }
+    pro: { name: string; price: string; pricePeriod: string; features: string[]; buttonText: string }
+    expert: { name: string; price: string; pricePeriod: string; features: string[]; buttonText: string }
   }
   legal: {
     title: string
@@ -72,7 +82,7 @@ export interface Translations {
 }
 
 const ru: Translations = {
-  nav: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ' },
+  nav: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ', pricing: 'Тарифы' },
   hero: {
     title: 'Здоровье, питание и цели — в одном месте',
     desc: 'NutriFit помогает вести дневник питания, следить за активностью и весом, хранить анализы и идти к целям вместе с наставниками и марафонами.',
@@ -142,6 +152,48 @@ const ru: Translations = {
     tagline: 'Здоровье, питание и цели в одном приложении',
     links: { features: 'Возможности', team: 'Команда', help: 'Справка', faq: 'FAQ', legal: 'Правовые документы' },
     copyright: 'Все права защищены.',
+    companyName: 'NutriFit',
+    jurisdiction: 'Юрисдикция: Аргентина',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Тарифы',
+    subtitle: 'Прозрачные планы для клиентов, специалистов и команд.',
+    lite: {
+      name: 'Lite',
+      price: 'Бесплатно',
+      features: [
+        'Дневник питания и активности',
+        'Базовая аналитика',
+        'Участие в марафонах стройности',
+        'Ведение до 3 клиентов (далее — платный доступ)',
+      ],
+      buttonText: 'Начать бесплатно',
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ мес',
+      features: [
+        'Всё из тарифа Lite',
+        'Доступ к лабораторным анализам и расширенной аналитике',
+        'Инструменты прогнозирования',
+        'Проведение собственных марафонов стройности',
+        'Расширенный лимит по ведению клиентов до 20 человек',
+      ],
+      buttonText: 'Оформить подписку',
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ мес',
+      features: [
+        'Всё из тарифа PRO',
+        'Расширенное ведение клиентов и дополнительные инструменты',
+        'Полный доступ без ограничений по количеству клиентов',
+      ],
+      buttonText: 'Оформить подписку',
+    },
   },
   legal: {
     title: 'Правовые документы',
@@ -156,7 +208,7 @@ const ru: Translations = {
 }
 
 const uk: Translations = {
-  nav: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ' },
+  nav: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ', pricing: 'Тарифи' },
   hero: {
     title: 'Здоров\'я, харчування та цілі — в одному місці',
     desc: 'NutriFit допомагає вести щоденник харчування, слідкувати за активністю та вагою, зберігати аналізи та йти до цілей разом з наставниками та марафонами.',
@@ -226,6 +278,48 @@ const uk: Translations = {
     tagline: 'Здоров\'я, харчування та цілі в одному додатку',
     links: { features: 'Можливості', team: 'Команда', help: 'Довідка', faq: 'FAQ', legal: 'Правові документи' },
     copyright: 'Усі права захищені.',
+    companyName: 'NutriFit',
+    jurisdiction: 'Юрисдикція: Аргентина',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Тарифи',
+    subtitle: 'Прозорі плани для клієнтів, фахівців та команд.',
+    lite: {
+      name: 'Lite',
+      price: 'Безкоштовно',
+      features: [
+        'Щоденник харчування та активності',
+        'Базова аналітика',
+        'Участь у марафонах стройності',
+        'Ведення до 3 клієнтів (далі — платний доступ)',
+      ],
+      buttonText: 'Почати безкоштовно',
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ міс',
+      features: [
+        'Усе з тарифу Lite',
+        'Доступ до лабораторних аналізів та розширеної аналітики',
+        'Інструменти прогнозування',
+        'Проведення власних марафонів стройності',
+        'Розширений ліміт ведення клієнтів до 20 осіб',
+      ],
+      buttonText: 'Оформити підписку',
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ міс',
+      features: [
+        'Усе з тарифу PRO',
+        'Розширене ведення клієнтів та додаткові інструменти',
+        'Повний доступ без обмежень за кількістю клієнтів',
+      ],
+      buttonText: 'Оформити підписку',
+    },
   },
   legal: {
     title: 'Правові документи',
@@ -240,7 +334,7 @@ const uk: Translations = {
 }
 
 const kk: Translations = {
-  nav: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ' },
+  nav: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ', pricing: 'Тарифтер' },
   hero: {
     title: 'Денсаулық, тамақтану және мақсаттар — бір жерде',
     desc: 'NutriFit тамақтану күнделігін жүргізуге, белсенділік пен салмақты бақылауға, талдауларды сақтауға және нұсқаушылар мен марафондармен мақсатқа жетуге көмектеседі.',
@@ -310,6 +404,48 @@ const kk: Translations = {
     tagline: 'Денсаулық, тамақтану және мақсаттар бір қосымшада',
     links: { features: 'Мүмкіндіктер', team: 'Команда', help: 'Анықтама', faq: 'FAQ', legal: 'Құқықтық құжаттар' },
     copyright: 'Барлық құқықтар қорғалған.',
+    companyName: 'NutriFit',
+    jurisdiction: 'Юрисдикция: Аргентина',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Тарифтер',
+    subtitle: 'Клиенттер, мамандар және командалар үшін ашық жоспарлар.',
+    lite: {
+      name: 'Lite',
+      price: 'Тегін',
+      features: [
+        'Тамақтану және белсенділік күнделігі',
+        'Базалық аналитика',
+        'Стройность марафондарына қатысу',
+        '3 клиентке дейін басқару (одан кейін — ақылы қол жеткізу)',
+      ],
+      buttonText: 'Тегін бастау',
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ ай',
+      features: [
+        'Lite тарифінің бәрі',
+        'Зертханалық талдаулар мен кеңейтілген аналитикаға қол жеткізу',
+        'Прогноздау құралдары',
+        'Өз стройность марафондарын өткізу',
+        'Клиенттерді басқару шегі 20 адамға дейін',
+      ],
+      buttonText: 'Жазылымды рәсімдеу',
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ ай',
+      features: [
+        'PRO тарифінің бәрі',
+        'Клиенттерді кеңейтілген басқару және қосымша құралдар',
+        'Клиент саны бойынша шектеусіз толық қол жеткізу',
+      ],
+      buttonText: 'Жазылымды рәсімдеу',
+    },
   },
   legal: {
     title: 'Құқықтық құжаттар',
@@ -324,7 +460,7 @@ const kk: Translations = {
 }
 
 const uz: Translations = {
-  nav: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ' },
+  nav: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ', pricing: 'Tariflar' },
   hero: {
     title: 'Salomatlik, ovqatlanish va maqsadlar — bitta joyda',
     desc: 'NutriFit ovqatlanish kundaligini yuritish, faollik va vaznni kuzatish, tahlillarni saqlash va maslahatchilar va marafonlar bilan maqsadlarga erishishga yordam beradi.',
@@ -394,6 +530,48 @@ const uz: Translations = {
     tagline: "Salomatlik, ovqatlanish va maqsadlar bitta ilovada",
     links: { features: 'Imkoniyatlar', team: 'Jamoa', help: 'Yordam', faq: 'FAQ', legal: 'Huquqiy hujjatlar' },
     copyright: "Barcha huquqlar himoyalangan.",
+    companyName: 'NutriFit',
+    jurisdiction: 'Yurisdiktsiya: Argentina',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Tariflar',
+    subtitle: "Mijozlar, mutaxassislar va jamoalar uchun ochiq rejalar.",
+    lite: {
+      name: 'Lite',
+      price: 'Bepul',
+      features: [
+        "Ovqatlanish va faollik kundaligi",
+        "Asosiy analitika",
+        "Sroynost marafonlarida qatnashish",
+        "3 tagacha mijozni boshqarish (keyin — pullik kirish)",
+      ],
+      buttonText: "Bepul boshlash",
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ oy',
+      features: [
+        "Lite tarifidagi barchasi",
+        "Lab tahlillari va kengaytirilgan analitikaga kirish",
+        "Prognozlashtirish vositalari",
+        "O'z sroynost marafonlarini o'tkazish",
+        "Mijozlarni boshqarish limiti 20 kishigacha",
+      ],
+      buttonText: "Obunani rasmiylashtirish",
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ oy',
+      features: [
+        "PRO tarifidagi barchasi",
+        "Kengaytirilgan mijoz boshqaruvi va qo'shimcha vositalar",
+        "Mijozlar soni bo'yicha cheklovsiz to'liq kirish",
+      ],
+      buttonText: "Obunani rasmiylashtirish",
+    },
   },
   legal: {
     title: 'Huquqiy hujjatlar',
@@ -408,7 +586,7 @@ const uz: Translations = {
 }
 
 const en: Translations = {
-  nav: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ' },
+  nav: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ', pricing: 'Pricing' },
   hero: {
     title: 'Health, nutrition, and goals — in one place',
     desc: 'NutriFit helps you keep a food diary, track activity and weight, store lab results, and reach your goals with mentors and challenges.',
@@ -478,6 +656,48 @@ const en: Translations = {
     tagline: 'Health, nutrition, and goals in one app',
     links: { features: 'Features', team: 'Team', help: 'Help', faq: 'FAQ', legal: 'Legal' },
     copyright: 'All rights reserved.',
+    companyName: 'NutriFit',
+    jurisdiction: 'Jurisdiction: Argentina',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Pricing',
+    subtitle: 'Transparent plans for clients, specialists, and teams.',
+    lite: {
+      name: 'Lite',
+      price: 'Free',
+      features: [
+        'Food and activity diary',
+        'Basic analytics',
+        'Participation in fitness marathons',
+        'Up to 3 clients (then — paid access)',
+      ],
+      buttonText: 'Start for free',
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ mo',
+      features: [
+        'Everything from Lite',
+        'Access to lab analyses and advanced analytics',
+        'Forecasting tools',
+        'Running your own fitness marathons',
+        'Extended client limit up to 20',
+      ],
+      buttonText: 'Subscribe',
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ mo',
+      features: [
+        'Everything from PRO',
+        'Advanced client onboarding and extra tools',
+        'Full access with no client limit',
+      ],
+      buttonText: 'Subscribe',
+    },
   },
   legal: {
     title: 'Legal documents',
@@ -492,7 +712,7 @@ const en: Translations = {
 }
 
 const es: Translations = {
-  nav: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ' },
+  nav: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ', pricing: 'Precios' },
   hero: {
     title: 'Salud, nutrición y metas — en un solo lugar',
     desc: 'NutriFit te ayuda a llevar un diario de alimentación, seguir actividad y peso, guardar análisis e ir hacia tus metas con mentores y retos.',
@@ -562,6 +782,48 @@ const es: Translations = {
     tagline: 'Salud, nutrición y metas en una sola app',
     links: { features: 'Funciones', team: 'Equipo', help: 'Ayuda', faq: 'FAQ', legal: 'Documentos legales' },
     copyright: 'Todos los derechos reservados.',
+    companyName: 'NutriFit',
+    jurisdiction: 'Jurisdicción: Argentina',
+    email: 'office@nutrifit.info',
+  },
+  pricing: {
+    title: 'Precios',
+    subtitle: 'Planes transparentes para clientes, especialistas y equipos.',
+    lite: {
+      name: 'Lite',
+      price: 'Gratis',
+      features: [
+        'Diario de alimentación y actividad',
+        'Analítica básica',
+        'Participación en retos de bienestar',
+        'Hasta 3 clientes (luego — acceso de pago)',
+      ],
+      buttonText: 'Empezar gratis',
+    },
+    pro: {
+      name: 'PRO',
+      price: '$5',
+      pricePeriod: '/ mes',
+      features: [
+        'Todo de Lite',
+        'Acceso a análisis de laboratorio y analítica avanzada',
+        'Herramientas de pronóstico',
+        'Realizar tus propios retos',
+        'Límite ampliado de clientes hasta 20',
+      ],
+      buttonText: 'Suscribirse',
+    },
+    expert: {
+      name: 'EXPERT',
+      price: '$10',
+      pricePeriod: '/ mes',
+      features: [
+        'Todo de PRO',
+        'Gestión avanzada de clientes y herramientas extra',
+        'Acceso completo sin límite de clientes',
+      ],
+      buttonText: 'Suscribirse',
+    },
   },
   legal: {
     title: 'Documentos legales',

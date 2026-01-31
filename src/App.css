@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.app > main {
+.app>main {
   flex: 1;
 }
 
@@ -1364,10 +1364,154 @@ section#team.section.section--alt {
   color: var(--accent-green);
 }
 
+.footer-company {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.footer-company__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.footer-company__jurisdiction {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-company__email {
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-company__email:hover {
+  color: var(--accent-green-hover, var(--accent-green));
+  text-decoration: underline;
+}
+
 .footer-bottom {
   font-size: 0.85rem;
   color: var(--text-muted);
   flex-shrink: 0;
+}
+
+/* Страница тарифов */
+.section--pricing {
+  padding: 32px 24px 48px;
+}
+
+.pricing-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.pricing-title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.pricing-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.pricing-card--highlighted {
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.12) 0%, var(--bg-card) 50%);
+}
+
+.pricing-card__name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.pricing-card__price-row {
+  margin-bottom: 20px;
+}
+
+.pricing-card__price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pricing-card__price-period {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.pricing-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.pricing-card__feature:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-card__check {
+  flex-shrink: 0;
+  color: var(--accent-green);
+  margin-top: 2px;
+}
+
+.pricing-card__cta {
+  margin-top: auto;
+}
+
+.pricing-card__cta .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 /* ========== RESPONSIVE ========== */

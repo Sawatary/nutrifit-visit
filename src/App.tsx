@@ -10,6 +10,7 @@ import { Legal } from './pages/Legal'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { UserAgreement } from './pages/UserAgreement'
 import { PublicOffer } from './pages/PublicOffer'
+import { Pricing } from './pages/Pricing'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="team" element={<Team />} />
             <Route path="spravka" element={<Spravka />} />
             <Route path="faq" element={<Faq />} />
+            <Route path="pricing" element={<Pricing />} />
             <Route path="legal" element={<Legal />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="user-agreement" element={<UserAgreement />} />

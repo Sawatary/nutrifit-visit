@@ -36,6 +36,7 @@ export function Layout() {
           <nav className="nav">
             <Link to="/features">{t.nav.features}</Link>
             <Link to="/team">{t.nav.team}</Link>
+            <Link to="/pricing">{t.nav.pricing}</Link>
             <Link to="/spravka">{t.nav.help}</Link>
             <Link to="/faq">{t.nav.faq}</Link>
             <Link to="/legal">{t.footer.links.legal}</Link>
@@ -107,6 +108,11 @@ export function Layout() {
 
       <footer className="footer">
         <div className="footer-inner">
+          <div className="footer-company">
+            <div className="footer-company__name">{t.footer.companyName}</div>
+            <div className="footer-company__jurisdiction">{t.footer.jurisdiction}</div>
+            <a href="mailto:office@nutrifit.info" className="footer-company__email">{t.footer.email}</a>
+          </div>
           <div className="footer-bottom">
             © {new Date().getFullYear()} NUTRIFIT. {t.footer.copyright}
           </div>
